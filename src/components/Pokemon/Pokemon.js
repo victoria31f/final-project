@@ -14,7 +14,7 @@ const Pokemon = ({ name, caught, id }) => {
 
     return (
         <div className="card">
-            <Link exact to={`/pokemons/${name}`}>
+            <Link exact to={`/pokemons/${id}`}>
                 <img src={`${process.env.PUBLIC_URL}/img/${id}.png`} className="card-img-top" alt="" />
             </Link>
             <div className="card-body p-0 d-flex justify-content-center flex-column">
