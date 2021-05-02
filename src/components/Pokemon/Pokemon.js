@@ -1,4 +1,5 @@
 import './Pokemon.css';
+import { Link } from 'react-router-dom';
 import { capitalize } from '../../utils';
 import { useDispatch } from 'react-redux';
 import { editPokemon } from '../PokemonsList/PokemonsListSlice';
@@ -13,7 +14,9 @@ const Pokemon = ({ name, caught, id }) => {
 
     return (
         <div className="card">
-            <img src={`${process.env.PUBLIC_URL}/img/${id}.png`} className="card-img-top" alt="" />
+            <Link exact to={`/pokemons/${name}`}>
+                <img src={`${process.env.PUBLIC_URL}/img/${id}.png`} className="card-img-top" alt="" />
+            </Link>
             <div className="card-body p-0 d-flex justify-content-center flex-column">
                 <h5 className="card-title text-center">{capitalize(name)}</h5>
                 <button type="button"
